@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="CodeShare - Shared Developer Code Repository">
+
+    <meta name="theme-color" content="#020205">
+
+    <title>Code Files - CodeShare</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <header class="navbar">
+
+        <div class="navbar-brand">
+    <img src="codeshare-logo.png" alt="CodeShare Logo" class="site-logo">
+
+    <div class="brand-text">
+        <h2>CodeShare</h2>
+        <span>SHARE • LEARN • GROW</span>
+    </div>
+</div>
+
+
+        <div class="user-profile-nav">
+
+            <span
+                id="user-email-display"
+                class="user-email">
+                Loading...
+            </span>
+
+            <button
+                type="button"
+                id="logout-btn"
+                class="btn btn-danger btn-sm"
+                onclick="window.location.href='index.html'">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main class="container main-content">
+
+        <!-- Page Header -->
+
+        <div class="page-heading">
+
+            <h1>
+                Shared Code Repository
+            </h1>
+
+            <p>
+                Search and explore the available source-code files.
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SEARCH & FILTER SECTION
+             ================================================= -->
+
+        <section class="repository-tools">
+
+            <!-- Search -->
+
+            <div class="search-box">
+
+                <label for="file-search">
+                    🔎 Search Files
+                </label>
+
+                <input
+                    type="search"
+                    id="file-search"
+                    placeholder="Search by file name or description..."
+                    autocomplete="off">
+
+            </div>
+
+
+
+            <!-- Filters -->
+
+            <div class="filter-row">
+
+                <!-- Category -->
+
+                <div class="filter-group">
+
+                    <label for="category-filter">
+                        📂 Category
+                    </label>
+
+                    <select id="category-filter">
+
+                        <option value="all">
+                            All Categories
+                        </option>
+
+                        <option value="html">
+                            HTML
+                        </option>
+
+                        <option value="css">
+                            CSS
+                        </option>
+
+                        <option value="javascript">
+                            JavaScript
+                        </option>
+
+                        <option value="python">
+                            Python
+                        </option>
+
+                        <option value="java">
+                            Java
+                        </option>
+
+                        <option value="php">
+                            PHP
+                        </option>
+
+                        <option value="other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Sort -->
+
+                <div class="filter-group">
+
+                    <label for="sort-files">
+                        ↕ Sort
+                    </label>
+
+                    <select id="sort-files">
+
+                        <option value="newest">
+                            Newest First
+                        </option>
+
+                        <option value="oldest">
+                            Oldest First
+                        </option>
+
+                        <option value="name-az">
+                            Name A-Z
+                        </option>
+
+                        <option value="name-za">
+                            Name Z-A
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 SEARCH RESULT INFORMATION
+                 ================================================= -->
+
+            <div
+                id="search-result-info"
+                class="search-result-info">
+
+                <span id="result-count">
+                    Loading files...
+                </span>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FILE LIST
+             ================================================= -->
+
+        <section
+            id="user-file-list"
+            class="file-list"
+            aria-live="polite">
+
+            <!-- Loading -->
+
+            <div class="loading-state">
+
+                <div class="cyber-loader">
+
+                    <span></span>
+                    <span></span>
+                    <span></span>
+
+                </div>
+
+                <p class="loading-text">
+                    Loading code files...
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             EMPTY SEARCH RESULT
+             ================================================= -->
+
+        <section
+            id="empty-search-state"
+            class="empty-state"
+            style="display: none;">
+
+            <div class="empty-state-icon">
+                🔍
+            </div>
+
+            <h3>
+                No Files Found
+            </h3>
+
+            <p>
+                आपकी search के अनुसार कोई code file नहीं मिली।
+                Search keyword या category बदलकर फिर try करें।
+            </p>
+
+            <button
+                type="button"
+                id="clear-search-btn"
+                class="btn btn-primary">
+
+                Clear Search
+
+            </button>
+
+        </section>
+
+
+
+        <!-- =================================================
+             NO FILES STATE
+             ================================================= -->
+
+        <section
+            id="no-files-state"
+            class="empty-state"
+            style="display: none;">
+
+            <div class="empty-state-icon">
+                📂
+            </div>
+
+            <h3>
+                Repository Empty
+            </h3>
+
+            <p>
+                अभी तक कोई code file उपलब्ध नहीं है।
+            </p>
+
+        </section>
+
+
+
+        <!-- =================================================
+             BACK TO WELCOME
+             ================================================= -->
+
+        <div class="repository-navigation">
+
+            <button
+                type="button"
+                id="back-welcome-btn"
+                class="btn btn-primary"
+                onclick="window.location.href='welcome.html'">
+
+                ← Back to Welcome
+
+            </button>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer>
+
+        <p>
+            Contact Developer:
+        </p>
+
+
+        <p>
+            📧 Email:
+
+            <a href="contact.html">
+
+                sarangsalunkhe885@gmail.com 📩
+
+            </a>
+
+        </p>
+
+
+        <p>
+            ✈️ Telegram:
+
+            <a
+                href="https://t.me/s_salunkhe_2007"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                @s_salunkhe_2007 ✈️
+
+            </a>
+
+        </p>
+
+
+        <p class="footer-copy">
+            © 2026 CodeShare. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         FILES PAGE JAVASCRIPT
+         ===================================================== -->
+
+    <script type="module"src="files.js"></script>
+    <script type="module" src="security.js"></script>
+    <script type="module" src="alert.js"></script>
+
+</body>
+</html>

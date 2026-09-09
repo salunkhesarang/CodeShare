@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#020205"
+    >
+
+    <title>My Account - CodeShare</title>
+
+    <!-- Account Page CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- =====================================================
+         TOP NAVBAR
+         ===================================================== -->
+
+    <header class="account-navbar">
+
+        <div class="brand">
+    <img src="codeshare-logo.png" alt="CodeShare Logo" class="account-logo">
+
+    <div class="account-brand-text">
+        <span class="brand-title">CodeShare</span>
+        <span class="brand-status">ACCOUNT</span>
+    </div>
+        </div>
+
+
+        <div class="nav-actions">
+
+            <button
+                type="button"
+                class="cyber-btn cyan-btn"
+                id="back-btn"
+            >
+                ← WELCOME
+            </button>
+
+            <button
+                type="button"
+                class="cyber-btn danger-btn"
+                id="logout-btn"
+            >
+                LOGOUT
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="account-main">
+
+
+        <!-- =================================================
+             PAGE HEADER
+             ================================================= -->
+
+        <section class="page-header">
+
+            <div class="header-icon">
+                👤
+            </div>
+
+            <div>
+
+                <h1>
+                    USER ACCOUNT
+                </h1>
+
+                <p>
+                    Manage and view your CodeShare account information.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             AUTH ALERT
+             ================================================= -->
+
+        <div
+            id="account-alert"
+            class="account-alert"
+            role="alert"
+            aria-live="polite"
+        ></div>
+
+
+        <!-- =================================================
+             ACCOUNT STATUS
+             ================================================= -->
+
+        <section class="status-card">
+
+            <div class="status-left">
+
+                <div class="avatar">
+                    👤
+                </div>
+
+                <div class="status-info">
+
+                    <h2 id="account-email">
+                        Loading...
+                    </h2>
+
+                    <p id="account-role">
+                        Checking account...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="online-status">
+
+                <span class="status-dot"></span>
+
+                <span id="account-status">
+                    ONLINE
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ACCOUNT INFORMATION
+             ================================================= -->
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <h2>
+                    ACCOUNT INFORMATION
+                </h2>
+
+                <span>
+                    [ USER_DATA ]
+                </span>
+
+            </div>
+
+
+            <div class="info-grid">
+
+
+                <!-- EMAIL -->
+
+                <div class="info-box">
+
+                    <div class="info-icon">
+                        📧
+                    </div>
+
+                    <div class="info-content">
+
+                        <span class="info-label">
+                            EMAIL ADDRESS
+                        </span>
+
+                        <strong id="email-value">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACCOUNT TYPE -->
+
+                <div class="info-box">
+
+                    <div class="info-icon">
+                        🔐
+                    </div>
+
+                    <div class="info-content">
+
+                        <span class="info-label">
+                            ACCOUNT TYPE
+                        </span>
+
+                        <strong id="role-value">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CREATED -->
+
+                <div class="info-box">
+
+                    <div class="info-icon">
+                        📅
+                    </div>
+
+                    <div class="info-content">
+
+                        <span class="info-label">
+                            MEMBER SINCE
+                        </span>
+
+                        <strong id="created-value">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LAST LOGIN -->
+
+                <div class="info-box">
+
+                    <div class="info-icon">
+                        🕐
+                    </div>
+
+                    <div class="info-content">
+
+                        <span class="info-label">
+                            LAST LOGIN
+                        </span>
+
+                        <strong id="login-value">
+                            Loading...
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- UID -->
+
+                <div class="info-box uid-box">
+
+                    <div class="info-icon">
+                        🆔
+                    </div>
+
+                    <div class="info-content">
+
+                        <span class="info-label">
+                            USER ID
+                        </span>
+
+                        <strong
+                            id="uid-value"
+                            class="uid-text"
+                        >
+                            Loading...
+                        </strong>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="copy-btn"
+                        id="copy-uid-btn"
+                    >
+                        COPY
+                    </button>
+
+                </div>
+
+
+                <!-- AUTH STATUS -->
+
+                <div class="info-box">
+
+                    <div class="info-icon">
+                        🛡️
+                    </div>
+
+                    <div class="info-content">
+
+                        <span class="info-label">
+                            AUTHENTICATION
+                        </span>
+
+                        <strong
+                            id="auth-value"
+                            class="success-text"
+                        >
+                            VERIFIED
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ACCOUNT STATISTICS
+             ================================================= -->
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <h2>
+                    ACCOUNT STATISTICS
+                </h2>
+
+                <span>
+                    [ SYSTEM_STATS ]
+                </span>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        📁
+                    </div>
+
+                    <div
+                        class="stat-number"
+                        id="files-count"
+                    >
+                        --
+                    </div>
+
+                    <div class="stat-label">
+                        AVAILABLE FILES
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🟢
+                    </div>
+
+                    <div
+                        class="stat-number"
+                        id="session-status"
+                    >
+                        ACTIVE
+                    </div>
+
+                    <div class="stat-label">
+                        SESSION
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        🔒
+                    </div>
+
+                    <div
+                        class="stat-number"
+                        id="security-status"
+                    >
+                        SECURE
+                    </div>
+
+                    <div class="stat-label">
+                        SECURITY
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             ACTIONS
+             ================================================= -->
+
+        <section class="panel actions-panel">
+
+            <div class="panel-header">
+
+                <h2>
+                    ACCOUNT ACTIONS
+                </h2>
+
+                <span>
+                    [ COMMANDS ]
+                </span>
+
+            </div>
+
+
+            <div class="action-grid">
+
+                <button
+                    type="button"
+                    class="action-btn cyan-action"
+                    id="refresh-btn"
+                >
+                    <span>🔄</span>
+                    REFRESH ACCOUNT
+                </button>
+
+
+                <button
+                    type="button"
+                    class="action-btn green-action"
+                    id="files-btn"
+                >
+                    <span>📁</span>
+                    VIEW CODE FILES
+                </button>
+
+
+                <button
+                    type="button"
+                    class="action-btn danger-action"
+                    id="logout-action-btn"
+                >
+                    <span>🚪</span>
+                    LOGOUT
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             SECURITY MESSAGE
+             ================================================= -->
+
+        <section class="security-notice">
+
+            <div class="security-icon">
+                🛡️
+            </div>
+
+            <div>
+
+                <h3>
+                    SECURE ACCOUNT SESSION
+                </h3>
+
+                <p>
+                    Your account session is protected by
+                    Firebase Authentication. Never share your
+                    password or authentication credentials with
+                    anyone.
+                </p>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer class="account-footer">
+
+        <p>
+            CodeShare © 2026
+        </p>
+
+        <p>
+            Secure Code Repository System
+        </p>
+
+    </footer>
+
+
+    <!-- =====================================================
+         FIREBASE / ACCOUNT JAVASCRIPT
+         ===================================================== -->
+
+    <script type="module"src="account.js"></script>
+    <script type="module" src="security.js"></script>
+    <script type="module" src="alert.js"></script>
+
+</body>
+</html>

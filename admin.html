@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="CodeShare Admin Dashboard">
+
+    <meta name="theme-color" content="#020205">
+
+    <title>Admin Dashboard - CodeShare</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         ADMIN NAVBAR
+         ===================================================== -->
+
+    <header class="navbar admin-nav">
+
+        <div class="navbar-brand">
+    <img src="codeshare-logo.png" alt="CodeShare Logo" class="site-logo">
+
+        <div class="brand-text">
+          <h2>CodeShare Admin</h2>
+          <span>CONTROL • MANAGE • SECURE</span>
+        </div>
+       </div>
+
+
+        <div class="user-profile-nav">
+
+            <span
+                id="user-email-display"
+                class="user-email">
+                Loading...
+            </span>
+
+            <button
+                type="button"
+                id="logout-btn"
+                class="btn btn-danger btn-sm">
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN ADMIN CONTENT
+         ===================================================== -->
+
+    <main class="container admin-container">
+
+
+        <!-- =================================================
+             ADMIN SECURITY STATUS
+             ================================================= -->
+
+        <section class="admin-status-card">
+
+            <div class="admin-status-icon">
+                🔐
+            </div>
+
+            <div>
+
+                <h3>
+                    Administrator Access
+                </h3>
+
+                <p>
+                    You are currently accessing the CodeShare
+                    administrator panel.
+                </p>
+
+            </div>
+
+            <span
+                id="admin-status"
+                class="status-badge">
+
+                VERIFIED
+
+            </span>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DASHBOARD STATISTICS
+             ================================================= -->
+
+        <section class="admin-statistics">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📁
+                </div>
+
+                <div class="stat-content">
+
+                    <span class="stat-label">
+                        Total Files
+                    </span>
+
+                    <strong
+                        id="total-files">
+                        0
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🟢
+                </div>
+
+                <div class="stat-content">
+
+                    <span class="stat-label">
+                        Repository Status
+                    </span>
+
+                    <strong
+                        id="repository-status">
+                        ONLINE
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🕐
+                </div>
+
+                <div class="stat-content">
+
+                    <span class="stat-label">
+                        Last Update
+                    </span>
+
+                    <strong
+                        id="last-update">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ADD / EDIT FILE CARD
+             ================================================= -->
+
+        <section class="admin-card">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h3 id="file-form-title">
+                        Add New Code File
+                    </h3>
+
+                    <p>
+                        Add a GitHub or external source URL
+                        to the shared repository.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <form id="file-form">
+
+                <!-- Hidden ID for Edit -->
+
+                <input
+                    type="hidden"
+                    id="edit-file-key"
+                    value="">
+
+
+
+                <!-- File Name -->
+
+                <div class="form-group">
+
+                    <label for="file-name">
+                        File / Project Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="file-name"
+                        placeholder="e.g. Responsive Navbar"
+                        maxlength="100"
+                        required>
+
+                </div>
+
+
+
+                <!-- File Logo -->
+
+                <div class="form-group">
+
+                    <label for="file-logo">
+                        Logo Icon / Emoji
+                    </label>
+
+                    <input
+                        type="text"
+                        id="file-logo"
+                        placeholder="e.g. 🌐, 📄, 🐍"
+                        maxlength="10"
+                        required>
+
+                </div>
+
+
+
+                <!-- Category -->
+
+                <div class="form-group">
+
+                    <label for="file-category">
+                        Category
+                    </label>
+
+                    <select
+                        id="file-category"
+                        required>
+
+                        <option value="">
+                            Select Category
+                        </option>
+
+                        <option value="html">
+                            HTML
+                        </option>
+
+                        <option value="css">
+                            CSS
+                        </option>
+
+                        <option value="javascript">
+                            JavaScript
+                        </option>
+
+                        <option value="python">
+                            Python
+                        </option>
+
+                        <option value="java">
+                            Java
+                        </option>
+
+                        <option value="php">
+                            PHP
+                        </option>
+
+                        <option value="android">
+                            Android
+                        </option>
+
+                        <option value="web">
+                            Web Project
+                        </option>
+
+                        <option value="other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <!-- Description -->
+
+                <div class="form-group">
+
+                    <label for="file-desc">
+                        Short Description
+                    </label>
+
+                    <textarea
+                        id="file-desc"
+                        placeholder="File/ repository information...."
+                        maxlength="500"
+                        required></textarea>
+
+                </div>
+
+
+
+                <!-- Source URL -->
+
+                <div class="form-group">
+
+                    <label for="file-github-url">
+                        Source / GitHub URL
+                    </label>
+
+                    <input
+                        type="url"
+                        id="file-github-url"
+                        placeholder="https://github.com/username/repository/..."
+                        required>
+
+                    <small class="form-help">
+                        Add GitHub or trusted website's URL
+                    </small>
+
+                </div>
+
+
+
+                <!-- Form Buttons -->
+
+                <div class="admin-form-buttons">
+
+                    <button
+                        type="submit"
+                        id="save-file-btn"
+                        class="btn btn-primary">
+
+                        ➕ Add File
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="cancel-edit-btn"
+                        class="btn btn-danger"
+                        style="display: none;">
+
+                        Cancel Edit
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+
+        <!-- =================================================
+             DIVIDER
+             ================================================= -->
+
+        <hr class="section-divider">
+
+
+
+        <!-- =================================================
+             MANAGE FILES
+             ================================================= -->
+
+        <section class="admin-files-section">
+
+            <div class="section-header">
+
+                <div>
+
+                    <h3>
+                        Manage Code Files
+                    </h3>
+
+                    <p>
+                        यहाँ से existing files को edit या delete
+                        कर सकते हैं.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Admin Search -->
+
+            <div class="admin-tools">
+
+                <div class="search-box">
+
+                    <label for="admin-file-search">
+                        🔎 Search Files
+                    </label>
+
+                    <input
+                        type="search"
+                        id="admin-file-search"
+                        placeholder="Search files..."
+                        autocomplete="off">
+
+                </div>
+
+
+
+                <div class="filter-group">
+
+                    <label for="admin-sort-files">
+                        ↕ Sort
+                    </label>
+
+                    <select id="admin-sort-files">
+
+                        <option value="newest">
+                            Newest First
+                        </option>
+
+                        <option value="oldest">
+                            Oldest First
+                        </option>
+
+                        <option value="name-az">
+                            Name A-Z
+                        </option>
+
+                        <option value="name-za">
+                            Name Z-A
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Admin Result Count -->
+
+            <div
+                id="admin-result-info"
+                class="search-result-info">
+
+                <span id="admin-result-count">
+                    Loading files...
+                </span>
+
+            </div>
+
+
+
+            <!-- File List -->
+
+            <div
+                id="admin-file-list"
+                class="file-list">
+
+                <div class="loading-state">
+
+                    <div class="cyber-loader">
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </div>
+
+                    <p class="loading-text">
+                        Loading repository...
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Empty State -->
+
+            <div
+                id="admin-empty-state"
+                class="empty-state"
+                style="display: none;">
+
+                <div class="empty-state-icon">
+                    📂
+                </div>
+
+                <h3>
+                    No Files Found
+                </h3>
+
+                <p>
+                    इस search के अनुसार कोई file नहीं मिली।
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ADMIN NAVIGATION
+             ================================================= -->
+
+        <div class="admin-actions">
+    <button
+        type="button"
+        class="btn btn-primary"
+        onclick="window.location.href='welcome.html'">
+        ← Back to Welcome
+    </button>
+
+    <button
+        type="button"
+        class="btn btn-github"
+        onclick="window.location.href='files.html'">
+        View Public Files →
+    </button>
+</div>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer>
+
+        <p>
+            CodeShare Administrator Panel 🔒
+        </p>
+
+        <p>
+            📧
+            <a href="contact.html">
+                Contact Developer
+            </a>
+        </p>
+
+        <p>
+            ✈️
+            <a
+                href="https://t.me/s_salunkhe_2007"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                @s_salunkhe_2007
+
+            </a>
+        </p>
+
+        <p class="footer-copy">
+            © 2026 CodeShare. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         ADMIN JAVASCRIPT
+         ===================================================== -->
+
+    <script type="module" src="admin.js">
+    </script>
+    <script type="module" src="security.js"></script>
+    <script type="module" src="alert.js"></script>
+
+</body>
+</html>

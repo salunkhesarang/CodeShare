@@ -1,0 +1,314 @@
+<!DOCTYPE html>  <html lang="hi">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  <meta  
+    name="description"  
+    content="Welcome to CodeShare - Developer Code Sharing Platform">  
+
+<meta name="theme-color" content="#020205">  
+
+<title>Welcome - CodeShare</title>  
+
+<!-- Main CSS -->  
+<link rel="stylesheet" href="style.css">
+
+</head>  <body>  <!-- =====================================================  
+     NAVBAR  
+     ===================================================== -->  
+
+<header class="navbar">  
+
+    <div class="navbar-brand">
+    <img src="codeshare-logo.png" alt="CodeShare Logo" class="site-logo">
+
+   </div>
+        <button  
+type="button"  
+class="btn btn-primary"  
+onclick="window.location.href='account.html'"
+
+> 
+
+👤 MY ACCOUNT
+
+</button>  
+        </div>  <div class="user-profile-nav">  
+
+        <span  
+            id="user-email-display"  
+            class="user-email">  
+            Loading...  
+        </span>  
+
+        <button  
+            type="button"  
+            id="logout-btn"  
+            class="btn btn-danger btn-sm"  
+            onclick="window.location.href='index.html'">  
+            Logout  
+        </button>  
+
+    </div>  
+
+</header>  
+
+
+
+<!-- =====================================================  
+     MAIN WELCOME CONTENT  
+     ===================================================== -->  
+
+<main class="container welcome-box">  
+
+    <!-- Premium Badge -->  
+
+    <div class="hero-badge">  
+
+        <span class="badge-dot"></span>  
+
+        <span>  
+            ✨ Premium Developer Platform  
+        </span>  
+
+    </div>  
+
+    <!-- Main Heading -->  
+
+    <h1>  
+        Welcome to CodeShare! 🚀  
+    </h1>  
+
+
+
+    <!-- Introduction -->  
+
+    <p class="description">  
+
+        Welcome to the CodeShare platform!  
+
+        This is a modern and centralized code-sharing platform  
+        designed for developers, software engineers, coding  
+        students and technology enthusiasts.  
+
+        Our goal is to make it easier for you to find useful  
+        source-code files and access them quickly.  
+
+        <br><br>  
+
+        Here you can explore different types of source-code files,  
+        projects, UI components, JavaScript modules, HTML/CSS  
+        templates and other useful developer resources.  
+
+        <br><br>  
+
+        All shared files are connected to their original source  
+        location. When you select a file, you will be redirected  
+        to the provided GitHub or external source URL where you  
+        can view the code and download it according to the  
+        source website's options.  
+
+        <br><br>  
+
+        CodeShare is designed with a simple goal:  
+
+        <strong>  
+            Find the code you need quickly and access it easily.  
+        </strong>  
+
+        <br><br>  
+
+        Use the button below to enter the shared code repository  
+        and explore the available files.  
+
+        <br><br>  
+
+        Happy Coding! 👨‍💻🚀  
+
+    </p>  
+
+
+
+    <!-- =================================================  
+         FEATURE CARDS  
+         ================================================= -->  
+
+    <section  
+        class="welcome-features"  
+        aria-label="CodeShare Features">  
+
+
+        <!-- Feature 1 -->  
+
+        <article class="feature-card">  
+
+            <div class="feature-icon">  
+                ⚡  
+            </div>  
+
+            <h4>  
+                Fast Access  
+            </h4>  
+
+            <p>  
+                Quickly find and access shared source-code  
+                files from the repository.  
+            </p>  
+
+        </article>  
+
+
+
+        <!-- Feature 2 -->  
+
+        <article class="feature-card">  
+
+            <div class="feature-icon">  
+                🛡️  
+            </div>  
+
+            <h4>  
+                Organized Files  
+            </h4>  
+
+            <p>  
+                Code files are organized with names, icons  
+                and descriptions for easy identification.  
+            </p>  
+
+        </article>  
+
+
+
+        <!-- Feature 3 -->  
+
+        <article class="feature-card">  
+
+            <div class="feature-icon">  
+                🔗  
+            </div>  
+
+            <h4>  
+                Direct Source  
+            </h4>  
+
+            <p>  
+                Open the original GitHub or external source  
+                directly from the file listing.  
+            </p>  
+
+        </article>  
+
+    </section>  
+
+
+
+    <!-- =================================================  
+         REPOSITORY INFORMATION  
+         ================================================= -->  
+
+    <section class="info-panel">  
+
+        <div class="info-panel-icon">  
+            📂  
+        </div>  
+
+        <div>  
+
+            <h3>  
+                Shared Code Repository  
+            </h3>  
+
+            <p>  
+                Explore the available code files by clicking  
+                the Next button below.  
+            </p>  
+
+        </div>  
+
+    </section>  
+
+
+
+    <!-- =================================================  
+         NAVIGATION BUTTONS  
+         ================================================= -->  
+
+    <div class="button-group">  
+
+        <button  
+            type="button"  
+            id="back-btn"  
+            class="btn btn-danger">  
+
+            ← Back / Logout  
+
+        </button>  
+
+
+        <button  
+            type="button"  
+            id="next-btn"  
+            class="btn btn-success">  
+
+            Next - View Files →  
+
+        </button>  
+
+    </div>  
+
+</main>  
+
+
+
+<!-- =====================================================  
+     FOOTER  
+     ===================================================== -->  
+
+<footer>  
+
+    <p>  
+        Contact Developer:  
+    </p>  
+
+
+    <p>  
+        📧 Email:  
+
+        <a href="contact.html">  
+            sarangsalunkhe885@gmail.com  
+        </a>  
+    </p>  
+
+
+    <p>  
+        ✈️ Telegram:  
+
+        <a  
+            href="https://t.me/s_salunkhe_2007"  
+            target="_blank"  
+            rel="noopener noreferrer">  
+
+            @s_salunkhe_2007  
+
+        </a>  
+    </p>  
+
+
+    <p class="footer-copy">  
+        © 2026 CodeShare. All Rights Reserved.  
+    </p>  
+
+</footer>  
+
+
+
+<!-- =====================================================  
+     WELCOME PAGE JAVASCRIPT  
+     ===================================================== -->  
+
+<script type="module" src="welcome.js"></script>  
+<script type="module" src="security.js"></script>  
+<script type="module" src="alert.js"></script>
+
+</body>  
+</html>
